@@ -45,7 +45,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="text-2xl font-bold text-white">
-            <span className="text-cyan-400">V</span>ivek
+            <span className="text-cyan-400">Vivek</span> Kumar
           </div>
 
           {/* Desktop Navigation */}

@@ -6,43 +6,43 @@ const Skills = () => {
 
   const skillCategories = [
     {
-      category: "Frontend",
+      category: "Cybersecurity Core",
       skills: [
-        { name: "React", level: 90 },
-        { name: "TypeScript", level: 85 },
-        { name: "JavaScript", level: 95 },
-        { name: "HTML/CSS", level: 95 },
-        { name: "Tailwind CSS", level: 88 }
+        { name: "Cybersecurity", level: 92 },
+        { name: "Penetration Testing", level: 88 },
+        { name: "Ethical Hacking", level: 85 },
+        { name: "Network Security", level: 87 },
+        { name: "Cyber Defense", level: 83 }
       ]
     },
     {
-      category: "Backend",
+      category: "Security Tools",
       skills: [
-        { name: "Node.js", level: 90 },
-        { name: "Express.js", level: 85 },
-        { name: "Python", level: 80 },
-        { name: "REST APIs", level: 92 },
-        { name: "GraphQL", level: 75 }
+        { name: "Wireshark", level: 85 },
+        { name: "Nmap", level: 88 },
+        { name: "Linux", level: 90 },
+        { name: "CompTIA", level: 80 },
+        { name: "Programming Languages", level: 82 }
       ]
     },
     {
-      category: "Database",
+      category: "Incident Response",
       skills: [
-        { name: "MongoDB", level: 88 },
-        { name: "PostgreSQL", level: 82 },
-        { name: "MySQL", level: 80 },
-        { name: "Redis", level: 70 },
-        { name: "Firebase", level: 75 }
+        { name: "Cybersecurity Incident Response", level: 78 },
+        { name: "Cybersecurity Awareness", level: 85 },
+        { name: "Threat Analysis", level: 80 },
+        { name: "Risk Assessment", level: 82 },
+        { name: "Security Auditing", level: 79 }
       ]
     },
     {
-      category: "Tools & Others",
+      category: "Technical Skills",
       skills: [
-        { name: "Git", level: 90 },
-        { name: "Docker", level: 75 },
-        { name: "AWS", level: 70 },
-        { name: "Linux", level: 85 },
-        { name: "CI/CD", level: 78 }
+        { name: "Network Analysis", level: 86 },
+        { name: "Vulnerability Assessment", level: 83 },
+        { name: "Digital Forensics", level: 75 },
+        { name: "Malware Analysis", level: 78 },
+        { name: "Security Protocols", level: 84 }
       ]
     }
   ];
@@ -69,11 +69,11 @@ const Skills = () => {
     <section id="skills" className="py-20 bg-slate-800/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Skills & Expertise</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">Cybersecurity Skills & Expertise</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto mb-6"></div>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Here's an overview of my technical skills and proficiency levels in various technologies 
-            and tools that I use to create amazing web applications.
+            Comprehensive cybersecurity skills across penetration testing, ethical hacking, network security, 
+            and incident response. Proficient in industry-standard tools and frameworks.
           </p>
         </div>
 

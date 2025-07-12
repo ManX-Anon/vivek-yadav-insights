@@ -1,92 +1,85 @@
 
-import { useEffect, useState } from "react";
-import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
+import { ArrowDown, Shield, Bug, Network } from "lucide-react";
 
 const Hero = () => {
-  const [displayText, setDisplayText] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const fullText = "Full Stack Developer";
-
-  useEffect(() => {
-    if (currentIndex < fullText.length) {
-      const timeout = setTimeout(() => {
-        setDisplayText(prev => prev + fullText[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
-      }, 100);
-      return () => clearTimeout(timeout);
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }, [currentIndex, fullText]);
-
-  const techStack = ["React", "Node.js", "MongoDB", "TypeScript", "Python", "AWS"];
+  };
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background Animation */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.1),transparent_70%)]"></div>
+      
+      {/* Floating Icons */}
+      <div className="absolute top-20 left-10 text-cyan-400/20 animate-bounce">
+        <Shield size={40} />
+      </div>
+      <div className="absolute top-40 right-20 text-blue-400/20 animate-pulse">
+        <Bug size={35} />
+      </div>
+      <div className="absolute bottom-40 left-20 text-cyan-400/20 animate-bounce delay-1000">
+        <Network size={45} />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
-            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Vivek</span>
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            Hi, I'm{" "}
+            <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              Vivek Kumar
+            </span>
           </h1>
-          <div className="text-2xl md:text-3xl text-gray-300 mb-6 h-12">
-            {displayText}<span className="animate-pulse">|</span>
+          <div className="text-xl md:text-2xl text-gray-300 mb-8 space-y-2">
+            <p className="font-semibold text-cyan-400">Cybersecurity Student</p>
+            <p>Ethical Hacker | Penetration Tester | Security Analyst</p>
           </div>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
-            Passionate about creating innovative web solutions with modern technologies. 
-            I build scalable applications that deliver exceptional user experiences.
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            Passionate about protecting digital infrastructure through ethical hacking, 
+            penetration testing, and comprehensive security analysis. Skilled in network security, 
+            incident response, and cybersecurity awareness.
           </p>
         </div>
 
-        {/* Tech Stack */}
-        <div className="mb-12">
-          <p className="text-gray-400 mb-4">Technologies I work with:</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            {techStack.map((tech, index) => (
-              <span
-                key={tech}
-                className="px-4 py-2 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-full text-cyan-400 text-sm font-medium hover:bg-slate-700/50 transition-all duration-300 hover:scale-105"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <button
+            onClick={() => scrollToSection("projects")}
+            className="px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-400 text-slate-900 font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-400/25 transition-all duration-300 hover:scale-105"
+          >
+            View My Work
+          </button>
+          <button
+            onClick={() => scrollToSection("contact")}
+            className="px-8 py-3 border border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400/10 transition-all duration-300"
+          >
+            Get In Touch
+          </button>
         </div>
 
-        {/* Social Links */}
-        <div className="flex justify-center space-x-6 mb-12">
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-full text-gray-300 hover:text-cyan-400 hover:border-cyan-400/50 transition-all duration-300 hover:scale-110"
-          >
-            <Github size={24} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/vivek-yadav-b05244292"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-full text-gray-300 hover:text-cyan-400 hover:border-cyan-400/50 transition-all duration-300 hover:scale-110"
-          >
-            <Linkedin size={24} />
-          </a>
-          <a
-            href="mailto:your.email@example.com"
-            className="p-3 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-full text-gray-300 hover:text-cyan-400 hover:border-cyan-400/50 transition-all duration-300 hover:scale-110"
-          >
-            <Mail size={24} />
-          </a>
+        {/* Skills Preview */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          {["Penetration Testing", "Network Security", "Wireshark", "Linux"].map((skill, index) => (
+            <div
+              key={skill}
+              className="p-3 bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-lg"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <span className="text-gray-300 text-sm font-medium">{skill}</span>
+            </div>
+          ))}
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="animate-bounce">
-          <ArrowDown className="mx-auto text-gray-400" size={32} />
-        </div>
+        <button
+          onClick={() => scrollToSection("about")}
+          className="animate-bounce text-cyan-400 hover:text-white transition-colors duration-300"
+          aria-label="Scroll to about section"
+        >
+          <ArrowDown size={32} />
+        </button>
       </div>
     </section>
   );

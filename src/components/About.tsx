@@ -1,27 +1,27 @@
 
-import { Code, Database, Globe, Smartphone } from "lucide-react";
+import { Shield, Bug, Network, Lock } from "lucide-react";
 
 const About = () => {
   const services = [
     {
-      icon: <Globe className="w-8 h-8" />,
-      title: "Web Development",
-      description: "Building responsive and modern web applications using latest technologies."
+      icon: <Shield className="w-8 h-8" />,
+      title: "Cybersecurity Analysis",
+      description: "Comprehensive security assessments and vulnerability analysis to protect digital assets."
     },
     {
-      icon: <Code className="w-8 h-8" />,
-      title: "Full Stack Development",
-      description: "End-to-end application development from frontend to backend and database."
+      icon: <Bug className="w-8 h-8" />,
+      title: "Penetration Testing",
+      description: "Ethical hacking and penetration testing to identify and address security weaknesses."
     },
     {
-      icon: <Database className="w-8 h-8" />,
-      title: "Database Design",
-      description: "Designing efficient and scalable database architectures for optimal performance."
+      icon: <Network className="w-8 h-8" />,
+      title: "Network Security",
+      description: "Advanced network security monitoring and threat detection using industry-standard tools."
     },
     {
-      icon: <Smartphone className="w-8 h-8" />,
-      title: "Mobile Responsive",
-      description: "Creating applications that work seamlessly across all devices and screen sizes."
+      icon: <Lock className="w-8 h-8" />,
+      title: "Incident Response",
+      description: "Rapid incident response and cybersecurity awareness training for organizations."
     }
   ];
 
@@ -36,21 +36,21 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <h3 className="text-2xl font-semibold text-white mb-6">
-              Passionate Developer with a Vision
+              Cybersecurity Student & Ethical Hacker
             </h3>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              I'm a dedicated Full Stack Developer with a strong foundation in modern web technologies. 
-              My journey in software development has equipped me with comprehensive skills in both 
-              frontend and backend development, allowing me to create complete, scalable solutions.
+              I'm Vivek Kumar, a dedicated cybersecurity student with a passion for protecting digital 
+              infrastructure and data. My expertise spans across penetration testing, ethical hacking, 
+              network security, and incident response, utilizing cutting-edge tools and methodologies.
             </p>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              With expertise in React, Node.js, MongoDB, and cloud technologies, I focus on building 
-              applications that not only meet technical requirements but also provide exceptional user 
-              experiences. I'm constantly learning and adapting to new technologies to stay at the 
-              forefront of web development.
+              With hands-on experience in Wireshark, Nmap, Linux systems, and various cybersecurity 
+              frameworks, I focus on identifying vulnerabilities, strengthening defenses, and creating 
+              robust security solutions. I'm committed to continuous learning in this ever-evolving 
+              field of cybersecurity.
             </p>
             <div className="flex flex-wrap gap-2 mb-6">
-              {["Problem Solving", "Team Collaboration", "Continuous Learning", "Innovation"].map((skill) => (
+              {["Security Research", "Threat Analysis", "Risk Mitigation", "Continuous Learning"].map((skill) => (
                 <span
                   key={skill}
                   className="px-3 py-1 bg-cyan-400/10 border border-cyan-400/30 rounded-full text-cyan-300 text-sm"
