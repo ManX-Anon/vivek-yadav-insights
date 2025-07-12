@@ -132,16 +132,18 @@ const Hero = () => {
         </button>
       </div>
 
-      {/* Additional CSS for blinking cursor */}
-      <style jsx>{`
-        @keyframes blink {
-          0%, 50% { opacity: 1; }
-          51%, 100% { opacity: 0; }
-        }
-        .animate-blink {
-          animation: blink 1s infinite;
-        }
-      `}</style>
+      {/* CSS for blinking cursor animation */}
+      <style>
+        {`
+          @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+          }
+          .animate-blink {
+            animation: blink 1s infinite;
+          }
+        `}
+      </style>
     </section>
   );
 };
