@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NightShade Protocol - Cybersecurity Expert</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #00ff00;
+            overflow-x: hidden;
+            height: 100vh;
+        }
+
+        .hero-container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+        }
+
+        /* Matrix Rain Animation */
+        .matrix-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .matrix-rain {
+            position: absolute;
+            top: -100%;
+            color: #00ff00;
+            font-size: 14px;
+            line-height: 1;
+            animation: matrix-fall 3s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes matrix-fall {
+            0% { transform: translateY(-100vh); }
+            100% { transform: translateY(100vh); }
+        }
+
+        /* Glitch Effect */
+        .glitch {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+        }
+
+        .glitch h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            animation: glitch-text 2s infinite;
+        }
+
+        .glitch h1:before,
+        .glitch h1:after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch h1:before {
+            animation: glitch-before 0.3s infinite;
+            color: #ff0000;
+            z-index: -1;
+        }
+
+        .glitch h1:after {
+            animation: glitch-after 0.3s infinite;
+            color: #0000ff;
+            z-index: -2;
+        }
+
+        @keyframes glitch-text {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+
+        @keyframes glitch-before {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(2px, -2px); }
+            40% { transform: translate(-2px, 2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(-2px, -2px); }
+        }
+
+        @keyframes glitch-after {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-2px, -2px); }
+            80% { transform: translate(2px, 2px); }
+        }
+
+        /* Typing Animation */
+        .typing-text {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fade-in 1s ease-in 2s forwards;
+        }
+
+        .typewriter {
+            overflow: hidden;
+            border-right: 0.15em solid #00ff00;
+            white-space: nowrap;
+            animation: 
+                typing 3s steps(40, end) 2s,
+                blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #00ff00; }
+        }
+
+        @keyframes fade-in {
+            to { opacity: 1; }
+        }
+
+        /* Neon Button */
+        .neon-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: transparent;
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            animation: fade-in 1s ease-in 4s forwards;
+        }
+
+        .neon-button:hover {
+            color: #0a0a0a;
+            background: #00ff00;
+            box-shadow: 
+                0 0 20px #00ff00,
+                0 0 40px #00ff00,
+                0 0 60px #00ff00;
+            transform: scale(1.05);
+        }
+
+        .neon-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .neon-button:hover::before {
+            left: 100%;
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #00ff00;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Scanner Line */
+        .scanner-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ff00, transparent);
+            animation: scan 4s linear infinite;
+            z-index: 4;
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(0vh); }
+            100% { transform: translateY(100vh); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .glitch h1 {
+                font-size: 2.5rem;
+            }
+            
+            .typing-text {
+                font-size: 1.2rem;
+            }
+            
+            .neon-button {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Terminal Window */
+        .terminal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 300px;
+            height: 200px;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid #00ff00;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: #00ff00;
+            padding: 10px;
+            z-index: 5;
+            opacity: 0;
+            animation: fade-in 1s ease-in 5s forwards;
+        }
+
+        .terminal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #00ff00;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 5px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ff0000;
+        }
+
+        .dot:nth-child(2) { background: #ffff00; }
+        .dot:nth-child(3) { background: #00ff00; }
+
+        .terminal-content {
+            line-height: 1.4;
+        }
+
+        .command {
+            color: #00ff00;
+        }
+
+        .output {
+            color: #ffffff;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-container">
+        <!-- Matrix Rain Background -->
+        <div class="matrix-bg" id="matrixBg"></div>
+        
+        <!-- Floating Particles -->
+        <div class="particles" id="particles"></div>
+        
+        <!-- Scanner Line -->
+        <div class="scanner-line"></div>
+        
+        <!-- Terminal Window -->
+        <div class="terminal">
+            <div class="terminal-header">
+                <span>nightshade_protocol.exe</span>
+                <div class="terminal-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <div class="terminal-content">
+                <div><span class="command">$ whoami</span></div>
+                <div class="output">cybersecurity_expert</div>
+                <div><span class="command">$ status</span></div>
+                <div class="output">ONLINE & READY</div>
+                <div><span class="command">$ mission</span></div>
+                <div class="output">SECURE THE DIGITAL WORLD</div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="glitch">
+            <h1 data-text="NIGHTSHADE PROTOCOL">NIGHTSHADE PROTOCOL</h1>
+            <div class="typing-text">
+                <div class="typewriter">Elite Cybersecurity Specialist & Digital Guardian</div>
+            </div>
+            <a href="mailto:nightshadeprotocol@proton.me" class="neon-button">INITIATE CONTACT</a>
+        </div>
+    </div>
+
+    <script>
+        // Matrix Rain Effect
+        function createMatrixRain() {
+            const matrixBg = document.getElementById('matrixBg');
+            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            
+            for (let i = 0; i < 50; i++) {
+                const rain = document.createElement('div');
+                rain.className = 'matrix-rain';
+                rain.style.left = Math.random() * 100 + '%';
+                rain.style.animationDelay = Math.random() * 3 + 's';
+                rain.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                rain.textContent = chars[Math.floor(Math.random() * chars.length)];
+                matrixBg.appendChild(rain);
+            }
+        }
+
+        // Floating Particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Initialize effects
+        createMatrixRain();
+        createParticles();
+
+        // Refresh matrix rain periodically
+        setInterval(createMatrixRain, 10000);
+    </script>
+</body>
+</html>
